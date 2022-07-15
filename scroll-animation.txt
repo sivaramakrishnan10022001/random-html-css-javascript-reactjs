@@ -1,0 +1,21 @@
+  useEffect(() => {
+        window.addEventListener('scroll', () => {
+            let content = document.querySelector('.mf-listview');
+            let item = document.querySelectorAll('.mf-listview-item');
+            let contentPosition = content.getBoundingClientRect().top;
+            let screenPosition = window.innerHeight / 1;
+
+            if (contentPosition < screenPosition) {
+                // item.classList.add('active')
+                for (let i = 0; i < item.length; i++) {
+                    item[i].classList.add('active')
+                }
+            }
+            else {
+                for (let i = 0; i < item.length; i++) {
+                    item[i].classList.remove('active')
+                }
+                // item.classList.remove('active')
+            }
+        })
+    })
