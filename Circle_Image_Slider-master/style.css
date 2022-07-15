@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body style */
+body {
+    font-family: "Lato", sans-serif;
+    letter-spacing: 0.1rem;
+    line-height: 1.3rem;
+}
+
+.slider-page-wrapper {
+    height: 100vh;
+    width: 100vw;
+    background: rgb(21, 22, 34);
+    background: linear-gradient(
+        130deg,
+        rgba(21, 22, 34, 1) 0%,
+        rgba(5, 10, 54, 1) 100%
+    );
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slider-page-wrapper .slider {
+    width: 100%;
+    height: 50%;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider .sliding-card {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    width: 100%;
+    height: 35rem;
+    transition: all 0.4s ease-in-out;
+    min-width: 21rem; /* 275px; */
+    max-width: 25rem; /* 350px; */
+}
+
+.slider .sliding-card .img-text-container {
+    text-align: center;
+    background-color: rgba(117, 46, 85, 0.8);
+    line-height: 1.4rem;
+    padding: 0.5rem;
+}
+
+.slider .sliding-card .img-text-container p {
+    z-index: 25;
+    opacity: 1;
+}
+
+.slider .sliding-card h2 {
+    position: absolute;
+    line-height: 1.8rem;
+    color: #fff;
+    left: 50%;
+    top: -10%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+/* Last and first child */
+
+.slider .sliding-card:first-child {
+    background: url("./img/person1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.slider .sliding-card:last-child {
+    background: url("./img/person5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Rest of images */
+
+.slider .sliding-card:nth-child(2) {
+    background: url("./img/person2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.slider .sliding-card:nth-child(3) {
+    background: url("./img/person3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.slider .sliding-card:nth-child(4) {
+    background: url("./img/person4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Buttons */
+.buttons-container {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 3.9rem;
+    background-color: transparent;
+    width: 15rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#prev,
+#next {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: all 0.1s ease-in-out;
+}
+
+#prev:hover,
+#next:hover {
+    cursor: pointer;
+}
+
+#prev:active,
+#next:active {
+    transform: scale(0.8);
+}
+
+/* Decreasing size of icons */
+.buttons-container .material-icons {
+    font-size: 40px;
+}
+
+/* Image slider effects */
+.first-card {
+    transform: scale(0.5) translate(-260%, -100%);
+    top: 50%;
+    left: 50%;
+    opacity: 0.25;
+}
+
+.first-card:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.15);
+}
+
+.before-current {
+    transform: scale(0.75) translate(-250%, -66.5%);
+    top: 50%;
+    left: 50%;
+    opacity: 0.75;
+    z-index: 20;
+}
+
+.before-current:hover {
+    opacity: 0.85;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.15);
+}
+
+.current {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.current:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.15);
+}
+
+.after-current {
+    transform: scale(0.75) translate(116.5%, -66.5%);
+    top: 50%;
+    left: 50%;
+    opacity: 0.75;
+    z-index: 20;
+}
+
+.after-current:hover {
+    opacity: 0.85;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.15);
+}
+
+.last-card {
+    transform: scale(0.5) translate(60%, -100%);
+    top: 50%;
+    left: 50%;
+    opacity: 0.25;
+}
+
+.last-card:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.15);
+}
